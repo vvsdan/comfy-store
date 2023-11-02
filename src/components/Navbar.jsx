@@ -21,7 +21,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="muni menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200"
             >
               nav links
             </ul>
