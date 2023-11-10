@@ -11,7 +11,11 @@ const ProductsContainer = () => {
   const [layout, setLayout] = useState("grid");
 
   const setActiveStyles = (pattern) => {
-    return `text-xl btn btn-circle btn-sm`;
+    return `text-xl btn btn-circle btn-sm ${
+      pattern === layout
+        ? "btn-primary text-primary-content"
+        : "btn-ghost text-based-content"
+    }`;
   };
   return (
     <>
