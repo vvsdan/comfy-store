@@ -14,6 +14,12 @@ const Filters = () => {
         size="input-sm"
       />
       {/* CATEGORIES */}
+      <FormSelect
+        label="select category"
+        name="company"
+        list={meta.categories}
+        size="select-sm"
+      />
       {/* COMPANIES */}
       <FormSelect
         label="select company"
