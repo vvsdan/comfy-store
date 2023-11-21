@@ -3,11 +3,11 @@ import { toast } from "react-toastify";
 
 const defaultState = {
   cartItems: [],
-  numItemsInCart: 0,
-  cartTotal: 0,
+  numItemsInCart: 2,
+  cartTotal: 2,
   shipping: 500,
-  tax: 0,
-  orderTotal: 0,
+  tax: 2,
+  orderTotal: 2,
 };
 
 const getCartFromLocalStorage = () => {
@@ -28,9 +28,7 @@ const cartSlice = createSlice({
       }
       state.numItemsInCart += product.amount;
       state.cartTotal += product.price * product.amount;
-
       cartSlice.caseReducers.calculateTotals(state);
-
       toast.success("Item added to cart");
     },
     clearCart: (state) => {
@@ -55,7 +53,7 @@ const cartSlice = createSlice({
       cartSlice.caseReducers.calculateTotals(state);
       toast.success("Cart updated");
     },
-    calculateTotals: () => {
+    calculateTotals: (state) => {
       state.tax = 0.1 * state.cartTotal;
       state.orderTotal = state.cartTotal + state.shipping + state.tax;
       localStorage.setItem("cart", JSON.stringify(state));
