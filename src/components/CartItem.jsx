@@ -33,9 +33,12 @@ const CartItem = () => {
           ></span>
         </p>
       </div>
-      {/* AMOUNT */}
-      {/* REMOVE */}
+      <div className="sm:ml-24">
+        {/* AMOUNT */}
+        {/* REMOVE */}
+      </div>
       {/* PRICE */}
+      <p className="font-medium sm:ml-auto">{formatPrice(price)}</p>
     </article>
   );
 };
