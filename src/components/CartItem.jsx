@@ -18,6 +18,9 @@ const CartItem = () => {
       />
       {/* INFO */}
       <div className="sm:ml-16">
+        {/* TITLE */}
+        <h3 className="capitalize font-medium">{title}</h3>
+        {/* COMPANY */}
         {/* COLOR */}
         <p classNam="mt-2 text-sm capitalize flex items-center gap-x-2">
           color:{" "}
