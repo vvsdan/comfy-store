@@ -17,7 +17,7 @@ const CartItem = () => {
         className="h-24 w-24 rounded-lg sm:h-32 object-cover"
       />
       {/* INFO */}
-      <div className="sm:ml-16">
+      <div className="sm:ml-16 sm:w-48">
         {/* TITLE */}
         <h3 className="capitalize font-medium">{title}</h3>
         {/* COMPANY */}
@@ -48,6 +48,9 @@ const CartItem = () => {
           </select>
         </div>
         {/* REMOVE */}
+        <button className="mt-2 link link-primary link-hover text-sm">
+          Remove
+        </button>
       </div>
       {/* PRICE */}
       <p className="font-medium sm:ml-auto">{formatPrice(price)}</p>
