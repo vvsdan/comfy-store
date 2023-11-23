@@ -21,8 +21,11 @@ const CartItem = () => {
         {/* TITLE */}
         <h3 className="capitalize font-medium">{title}</h3>
         {/* COMPANY */}
+        <h4 className="mt-2 capitalize text-sm text-neutral-content">
+          {company}
+        </h4>
         {/* COLOR */}
-        <p classNam="mt-2 text-sm capitalize flex items-center gap-x-2">
+        <p classNam="mt-4 text-sm capitalize flex items-center gap-x-2">
           color:{" "}
           <span
             className="badge badge-sm"
