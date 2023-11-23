@@ -1,5 +1,5 @@
 import { formatPrice, generateAmountOptions } from "../utils";
-import { removeItems, editItem } from "../features/cart/cartSlice";
+import { removeItem, editItem } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 
 const CartItem = () => {
