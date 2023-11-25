@@ -1,10 +1,10 @@
 import { formatPrice, generateAmountOptions } from "../utils";
-import { removeItems, editItem } from "../features/cart/cartSlice";
+import { removeItem, editItem, cartItems } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
-
-const CartItem = () => {
+const CartItem = ({ cartItems }) => {
   const { cartID, title, price, image, amount, company, productColor } =
-    CartItem;
+    cartItems;
+
   return (
     <article
       key={cartID}
@@ -25,8 +25,8 @@ const CartItem = () => {
           {company}
         </h4>
         {/* COLOR */}
-        <p classNam="mt-4 text-sm capitalize flex items-center gap-x-2">
-          color:{" "}
+        <p className="mt-4 text-sm capitalize flex items-center gap-x-2">
+          color:
           <span
             className="badge badge-sm"
             style={{ backgroundColor: productColor }}
