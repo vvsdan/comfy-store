@@ -16,7 +16,7 @@ const getCartFromLocalStorage = () => {
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: getCartFromLocalStorage(),
+  initialState: defaultState,
   reducers: {
     addItem: (state, action) => {
       const { product } = action.payload;
@@ -31,6 +31,7 @@ const cartSlice = createSlice({
       state.cartTotal += product.price * product.amount;
       cartSlice.caseReducers.calculateTotals(state);
       toast.success("item added to cart");
+      return item;
     },
     clearCart: (state) => {
       localStorage.setItem("cart", JSON.stringify(defaultState));
