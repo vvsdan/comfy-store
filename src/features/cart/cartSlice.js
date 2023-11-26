@@ -3,11 +3,11 @@ import { toast } from "react-toastify";
 
 const defaultState = {
   cartItems: [],
-  numItemsInCart: 0,
-  cartTotal: 0,
+  numItemsInCart: 10,
+  cartTotal: 10,
   shipping: 500,
-  tax: 0,
-  orderTotal: 0,
+  tax: 10,
+  orderTotal: 10,
 };
 
 const getCartFromLocalStorage = () => {
