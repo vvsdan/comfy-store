@@ -1,4 +1,4 @@
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector, useSelector } from "react-redux/es/hooks/useSelector";
 import { CheckoutForm, SectionTitle, CartTotals } from "../components";
 
 const Checkout = () => {
