@@ -22,7 +22,27 @@ export const action =
       cartItems,
       numItemsInCart,
     };
-    return null;
+
+    try {
+      const response = await customFetch.post(
+        "/orders",
+        { data: info },
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      store.dispatch(clearCart());
+      toast.success("order placed successfully");
+      return redirect("/orders");
+    } catch (error) {
+      const errorMessage =
+        error?.response?.data?.error?.message ||
+        "please double check your credentials";
+      toast.error(errorMessage);
+      return null;
+    }
   };
 
 const CheckoutForm = () => {
