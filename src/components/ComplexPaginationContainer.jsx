@@ -24,6 +24,11 @@ const ComplexPaginationContainer = () => {
             </button>
   }
 
+  const renderPageButtons = () => {
+    const pageButtons = []
+    return pageButtons
+  }
+
   if (pageCount < 2) return null;
   return (
     <div className="mt-16 flex justify-end">
@@ -38,11 +43,7 @@ const ComplexPaginationContainer = () => {
         >
           Prev
         </button>
-        {pages.map((pageNumber) => {
-          return (
-           
-          );
-        })}
+        {renderPageButtons()}
         <button
           className="btn btn-xs sm:btn-md join-item"
           onClick={() => {
