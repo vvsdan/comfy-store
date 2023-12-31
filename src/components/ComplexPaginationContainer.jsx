@@ -1,4 +1,5 @@
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import PaginationContainer from "./PaginationContainer";
 
 const ComplexPaginationContainer = () => {
   const { meta } = useLoaderData();
@@ -12,22 +13,24 @@ const ComplexPaginationContainer = () => {
     navigate(`${pathname}?${searchParams.toString()}`);
   };
 
-  const addPageButton = { pageNumer, activeClass } => {
-    return  <button
-              key={pageNumber}
-              onClick={() => handlePageChange(pageNumber)}
-              className={`btn btn-xs sm:btn-md border-none join-item ${
-                activeClass ? "bg-base-300 border-base-300" : ""
-              }`}
-            >
-              {pageNumber}
-            </button>
-  }
+  const addPageButton = ({ pageNumber, activeClass }) => {
+    return (
+      <button
+        key={pageNumber}
+        onClick={() => handlePageChange(pageNumber)}
+        className={`btn btn-xs sm:btn-md border-none join-item ${
+          activeClass ? "bg-base-300 border-base-300" : ""
+        }`}
+      >
+        {pageNumber}
+      </button>
+    );
+  };
 
   const renderPageButtons = () => {
-    const pageButtons = []
-    return pageButtons
-  }
+    const pageButtons = [];
+    return pageButtons;
+  };
 
   if (pageCount < 2) return null;
   return (
@@ -57,6 +60,6 @@ const ComplexPaginationContainer = () => {
       </div>
     </div>
   );
-  return <div>PaginationContainer</div>;
+  return <PaginationContainer></PaginationContainer>;
 };
 export default PaginationContainer;
