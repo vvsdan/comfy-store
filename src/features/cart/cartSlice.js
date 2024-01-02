@@ -9,6 +9,7 @@ const defaultState = {
   tax: 0,
   orderTotal: 0,
 };
+
 const getCartFromLocalStorage = () => {
   return JSON.parse(localStorage.getItem("cart")) || defaultState;
 };
@@ -61,7 +62,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, clearCart, removeItem, editItem, cartItems } =
-  cartSlice.actions;
+export const { addItem, clearCart, removeItem, editItem } = cartSlice.actions;
 
 export default cartSlice.reducer;

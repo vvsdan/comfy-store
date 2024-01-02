@@ -1,8 +1,9 @@
 import { formatPrice, generateAmountOptions } from "../utils";
-import { removeItem, editItem, cartItems } from "../features/cart/cartSlice";
+import { removeItem, editItem } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
-const CartItem = ({ cartItems }) => {
+const CartItem = ({ cartItem }) => {
   const dispatch = useDispatch();
+
   const removeItemFromTheCart = () => {
     dispatch(removeItem({ cartID }));
   };
@@ -11,7 +12,7 @@ const CartItem = ({ cartItems }) => {
   };
 
   const { cartID, title, price, image, amount, company, productColor } =
-    cartItems;
+    cartItem;
 
   return (
     <article
@@ -22,7 +23,7 @@ const CartItem = ({ cartItems }) => {
       <img
         src={image}
         alt={title}
-        className="h-24 w-24 rounded-lg sm:h-32 object-cover"
+        className="h-24 w-24 rounded-lg sm:h-32 sm:w-32 object-cover"
       />
       {/* INFO */}
       <div className="sm:ml-16 sm:w-48">
@@ -34,7 +35,7 @@ const CartItem = ({ cartItems }) => {
         </h4>
         {/* COLOR */}
         <p className="mt-4 text-sm capitalize flex items-center gap-x-2">
-          color:
+          color :
           <span
             className="badge badge-sm"
             style={{ backgroundColor: productColor }}
@@ -62,9 +63,10 @@ const CartItem = ({ cartItems }) => {
           className="mt-2 link link-primary link-hover text-sm"
           onClick={removeItemFromTheCart}
         >
-          Remove
+          remove
         </button>
       </div>
+
       {/* PRICE */}
       <p className="font-medium sm:ml-auto">{formatPrice(price)}</p>
     </article>
